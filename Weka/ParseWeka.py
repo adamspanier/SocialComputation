@@ -6,8 +6,6 @@ import pandas as pd
 def main():
     howToUse()
     fileName = getFileName()
-    #fieldNum = getNumStringFields()
-    #fieldNums = getFieldNums(fieldNum)
     cleanFile(fileName)
     congrats()
 
@@ -21,17 +19,6 @@ def howToUse():
 def getFileName():
     name = input("Please enter the file name: ")
     return name
-    
-def getNumStringFields():
-    fieldNum = int(input("Please enter the number of string fields in the dataset: "))
-    return fieldNum
-    
-def getFieldNums(numStringFields):
-    fieldNums = []
-    print("Please enter field numbers starting with lowest first. Press ENTER between each field number.")
-    for x in range(numStringFields):
-        fieldNums.append(int(input("Field num " + str(x+1) + ": ")))
-    return fieldNums
     
 def cleanFile(fileName):
     newOutName = "CLEAN_" + fileName
@@ -61,5 +48,6 @@ def congrats():
     print("\n*** Dance Time ***\n")
     print("Your Dataset should be Weka Compatible now!")
     print("")
+    
 if __name__ == "__main__":
     main()
